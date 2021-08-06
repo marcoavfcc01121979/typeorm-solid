@@ -7,5 +7,43 @@
         "contact": {
             "email": "solid@solid.com"
         }
+    },
+    "paths": {
+        "/": {
+            "post": {
+                "tags": ["User"],
+                "summary": "Create a User",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "email": "example@example.com",
+                                    "name": "name solid example"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Users already exists"
+                    }
+                } 
+            }
+        }
     }
 }
